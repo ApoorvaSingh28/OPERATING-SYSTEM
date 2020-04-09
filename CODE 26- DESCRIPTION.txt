@@ -1,0 +1,38 @@
+DESCRIPTION
+File copying is the creation of a new file which has the same content as an existing file. Computer operating systems include file copying methods to users, with operating systems with graphical user interfaces (GUIs) often providing copy-and-paste or drag-and-drop methods of file copying. 
+Operating systems may have specialized file copying APIs are usually able to tell the server to perform the copying locally, without sending file contents over the network, thus greatly improving performance.
+A file name must be unique, if it's not, a number will be appended to the end of a file name. It may also have "- Copy" appended to the end of the file name, instead of a number. Appending a number to the end of the copied file's name assures the copied file is unique. 
+For example, if the original file name is abc123.pdf and a copy is created in the same directory or folder, the copied file name could be abc123(1).pdf or abc123 - Copy.pdf.
+ Copying multiple files to another location
+1.Below are the steps on how to copy multiple files from one directory to another directory.
+
+2.Using the cd command, move to the directory that contains the files you want to copy.
+
+3.Once in the directory that contains the files you want to copy, type a command similar to one of the following commands.
+
+PIPES
+Pipe is one-way communication only i.e we can use a pipe such that One process write to the pipe, and the other process reads from the pipe.
+It opens a pipe, which is an area of main memory that is treated as a “virtual file”.
+The pipe can be used by the creating process, as well as all its child processes, for reading and writing.
+One process can write to this “virtual file” or pipe and another related process can read from it.
+
+ALGORITHM:
+Step1: Create pipe file descriptor (1)
+
+Step2: Set up the pipe, open both input and output files. Make sure your program closes file handles.(0)
+
+Step3: Create the processes. Read from the input file in parent process and write to the pipe. Write to the output file in the child process. Make sure your program closes file handles.(1)
+
+Step4: Add a timestamp in the child process to record the time when the reading-writing is done. Print the timestamp to console output.(0)
+
+COMLEXITY:
+
+Mention all the complexities line to line in the code. Overall Complexity  is O(nLogn).
+
+
+
+CONSTRAINTS:
+1.You must check that none of the fopen() calls failed, otherwise your program will invoke undefined behavior because of NULL pointer dereference.
+2.When CopyFile is used to copy an encrypted file, it attempts to encrypt the destination file with the keys used in the encryption of the source file.
+3.If this cannot be done, this function attempts to encrypt the destination file with default keys. If neither of these methods can be done, CopyFile fails with an ERROR_ENCRYPTION_FAILED error code.
+
